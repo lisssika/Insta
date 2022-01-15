@@ -1,22 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Editor">
+      <UniqueIdentifier>{bc328cdd-4323-4eee-bfe3-920fe925ff6a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="EditorCommand">
+      <UniqueIdentifier>{c4d005b4-8a25-4962-ba35-bbfce7681f29}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Commands">
+      <UniqueIdentifier>{2ecf2109-4f5a-4668-9141-061d6f8bb3fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Point">
+      <UniqueIdentifier>{8c626784-6387-4785-a96c-a8961148888a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands\Cropp">
+      <UniqueIdentifier>{17ddbec6-f4b6-4853-b0b7-82b8b8945a63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands\Scale">
+      <UniqueIdentifier>{375e71bc-69b9-4a52-958d-51e47707aabb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands\Filters">
+      <UniqueIdentifier>{b0f53bf7-7f63-4012-a0b6-660af5ca1a3d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Insta.cpp">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="Editor.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorCommand.h">
+      <Filter>EditorCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageCropp.h">
+      <Filter>Commands\Cropp</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageScale.h">
+      <Filter>Commands\Scale</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Editor.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorCommand.cpp">
+      <Filter>EditorCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Point</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageCropp.cpp">
+      <Filter>Commands\Cropp</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageScale.cpp">
+      <Filter>Commands\Scale</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
