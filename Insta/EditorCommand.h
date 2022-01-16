@@ -5,10 +5,11 @@
 class EditorCommand
 {
 public:
-	EditorCommand(std::shared_ptr<cv::Mat>);
+	EditorCommand(const std::shared_ptr<cv::Mat>& image);
 	virtual void redo() = 0;
 	virtual void undo() = 0;
-private:
+	virtual ~EditorCommand() = default;
+protected:
 	std::shared_ptr<cv::Mat> image_;
 };
 

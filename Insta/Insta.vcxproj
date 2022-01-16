@@ -19,18 +19,29 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DoubleIsEqual.h" />
     <ClInclude Include="Editor.h" />
     <ClInclude Include="EditorCommand.h" />
     <ClInclude Include="ImageCropp.h" />
     <ClInclude Include="ImageScale.h" />
+    <ClInclude Include="InstaEditor.h" />
+    <ClInclude Include="Mouse.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="Scale.h" />
+    <ClInclude Include="TrackBar.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DoubleIsEqual.cpp" />
     <ClCompile Include="Editor.cpp" />
     <ClCompile Include="EditorCommand.cpp" />
     <ClCompile Include="ImageCropp.cpp" />
     <ClCompile Include="ImageScale.cpp" />
+    <ClCompile Include="InstaEditor.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Scale.cpp" />
+    <ClCompile Include="TrackBar.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

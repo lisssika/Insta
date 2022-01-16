@@ -13,14 +13,29 @@
     <Filter Include="Point">
       <UniqueIdentifier>{8c626784-6387-4785-a96c-a8961148888a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Commands\Cropp">
+    <Filter Include="InstaEditor">
+      <UniqueIdentifier>{fa97be82-0cde-4ae4-bca0-d8d6ff3b02b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mouse">
+      <UniqueIdentifier>{5b379e5c-cf1f-4405-ad14-f302ce21b9f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TrackBar">
+      <UniqueIdentifier>{b933a38c-557e-4701-85da-336312cf8df0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands\CroppCmd">
       <UniqueIdentifier>{17ddbec6-f4b6-4853-b0b7-82b8b8945a63}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Commands\Scale">
+    <Filter Include="Commands\ScaleCmd">
       <UniqueIdentifier>{375e71bc-69b9-4a52-958d-51e47707aabb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Commands\Filters">
+    <Filter Include="Commands\ScaleCmd\ScaleMethods">
+      <UniqueIdentifier>{dde59943-2e66-42e0-87e5-eb7a7860b110}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands\FiltersCmds">
       <UniqueIdentifier>{b0f53bf7-7f63-4012-a0b6-660af5ca1a3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DoubleIsEqual">
+      <UniqueIdentifier>{39953411-a74f-4bdc-86e0-4a7d07975afc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -34,10 +49,25 @@
       <Filter>Point</Filter>
     </ClInclude>
     <ClInclude Include="ImageCropp.h">
-      <Filter>Commands\Cropp</Filter>
+      <Filter>Commands\CroppCmd</Filter>
     </ClInclude>
     <ClInclude Include="ImageScale.h">
-      <Filter>Commands\Scale</Filter>
+      <Filter>Commands\ScaleCmd</Filter>
+    </ClInclude>
+    <ClInclude Include="InstaEditor.h">
+      <Filter>InstaEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="TrackBar.h">
+      <Filter>TrackBar</Filter>
+    </ClInclude>
+    <ClInclude Include="Scale.h">
+      <Filter>Commands\ScaleCmd\ScaleMethods</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleIsEqual.h">
+      <Filter>DoubleIsEqual</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -51,10 +81,26 @@
       <Filter>Point</Filter>
     </ClCompile>
     <ClCompile Include="ImageCropp.cpp">
-      <Filter>Commands\Cropp</Filter>
+      <Filter>Commands\CroppCmd</Filter>
     </ClCompile>
     <ClCompile Include="ImageScale.cpp">
-      <Filter>Commands\Scale</Filter>
+      <Filter>Commands\ScaleCmd</Filter>
+    </ClCompile>
+    <ClCompile Include="InstaEditor.cpp">
+      <Filter>InstaEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="TrackBar.cpp">
+      <Filter>TrackBar</Filter>
+    </ClCompile>
+    <ClCompile Include="Scale.cpp">
+      <Filter>Commands\ScaleCmd\ScaleMethods</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="DoubleIsEqual.cpp">
+      <Filter>DoubleIsEqual</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
