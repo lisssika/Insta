@@ -3,7 +3,7 @@
 #include "Mouse.h"
 #include "TrackBar.h"
 #include "Editor.h"
-#include "ImageScale.h"
+#include "ImageResize.h"
 
 namespace 
 {
@@ -32,11 +32,11 @@ void InstaEditor::execute()
 		
 		const int scale = track_bar.get();
 
-		key = cv::waitKey(1) & 0xFF; // некрасиво
+		key = cv::waitKey(1); // некрасиво
 		if (old_scale!=scale)
 		{
 			old_scale = scale;
-			std::unique_ptr<EditorCommand> cmd = std::make_unique<ImageScale>(image_, scale);
+			std::unique_ptr<EditorCommand> cmd = std::make_unique<ImageResize>(image_, scale);
 			editor_.addAndExecuteCommand(std::move(cmd));
 		}		
 		cv::imshow(window_name, *image_);

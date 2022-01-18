@@ -1,4 +1,4 @@
-#include "Scale.h"
+#include "Resize.h"
 
 #include "DoubleIsEqual.h"
 
@@ -9,14 +9,15 @@ cv::Mat SeparateScale::operator()(const cv::Mat& image, double x_scale, double y
 
 cv::Mat SeparateScale::scale(const cv::Mat& image, const double x_scale, const double y_scale)
 {
-	int new_cols = static_cast<int>(static_cast<double>(image.cols) * x_scale);
-	int new_rows = static_cast<int>(static_cast<double>(image.rows) * y_scale);
-	cv::Mat scaled_image;
-	if (double_is_equal(x_scale, 0.) && double_is_equal(y_scale, 0.))
+	int new_cols = static_cast<int>(image.cols * x_scale);
+	int new_rows = static_cast<int>(image.rows * y_scale);
+	if (new_cols!= 0 && new_rows!= 0)
 	{
+		cv::Mat scaled_image;
 		cv::resize(image, scaled_image, { new_cols, new_rows }, 0, cv::INTER_LINEAR);
+		return scaled_image;
 	}
-	return scaled_image;
+	return image;
 }
 
 cv::Mat ProportionalScale::operator()(const cv::Mat& image, double xy_scale)
