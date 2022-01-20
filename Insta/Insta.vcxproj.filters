@@ -25,17 +25,17 @@
     <Filter Include="Commands\CroppCmd">
       <UniqueIdentifier>{17ddbec6-f4b6-4853-b0b7-82b8b8945a63}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Commands\ScaleCmd">
-      <UniqueIdentifier>{375e71bc-69b9-4a52-958d-51e47707aabb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Commands\ScaleCmd\ScaleMethods">
-      <UniqueIdentifier>{dde59943-2e66-42e0-87e5-eb7a7860b110}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Commands\FiltersCmds">
       <UniqueIdentifier>{b0f53bf7-7f63-4012-a0b6-660af5ca1a3d}</UniqueIdentifier>
     </Filter>
     <Filter Include="DoubleIsEqual">
       <UniqueIdentifier>{39953411-a74f-4bdc-86e0-4a7d07975afc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands\ResizeCmd">
+      <UniqueIdentifier>{375e71bc-69b9-4a52-958d-51e47707aabb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands\ResizeCmd\ResizeMethods">
+      <UniqueIdentifier>{dde59943-2e66-42e0-87e5-eb7a7860b110}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -51,9 +51,6 @@
     <ClInclude Include="ImageCropp.h">
       <Filter>Commands\CroppCmd</Filter>
     </ClInclude>
-    <ClInclude Include="ImageScale.h">
-      <Filter>Commands\ScaleCmd</Filter>
-    </ClInclude>
     <ClInclude Include="InstaEditor.h">
       <Filter>InstaEditor</Filter>
     </ClInclude>
@@ -63,11 +60,14 @@
     <ClInclude Include="TrackBar.h">
       <Filter>TrackBar</Filter>
     </ClInclude>
-    <ClInclude Include="Scale.h">
-      <Filter>Commands\ScaleCmd\ScaleMethods</Filter>
-    </ClInclude>
     <ClInclude Include="DoubleIsEqual.h">
       <Filter>DoubleIsEqual</Filter>
+    </ClInclude>
+    <ClInclude Include="Resize.h">
+      <Filter>Commands\ResizeCmd\ResizeMethods</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageResize.h">
+      <Filter>Commands\ResizeCmd</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -83,9 +83,6 @@
     <ClCompile Include="ImageCropp.cpp">
       <Filter>Commands\CroppCmd</Filter>
     </ClCompile>
-    <ClCompile Include="ImageScale.cpp">
-      <Filter>Commands\ScaleCmd</Filter>
-    </ClCompile>
     <ClCompile Include="InstaEditor.cpp">
       <Filter>InstaEditor</Filter>
     </ClCompile>
@@ -95,12 +92,15 @@
     <ClCompile Include="TrackBar.cpp">
       <Filter>TrackBar</Filter>
     </ClCompile>
-    <ClCompile Include="Scale.cpp">
-      <Filter>Commands\ScaleCmd\ScaleMethods</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="DoubleIsEqual.cpp">
       <Filter>DoubleIsEqual</Filter>
+    </ClCompile>
+    <ClCompile Include="Resize.cpp">
+      <Filter>Commands\ResizeCmd\ResizeMethods</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageResize.cpp">
+      <Filter>Commands\ResizeCmd</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
