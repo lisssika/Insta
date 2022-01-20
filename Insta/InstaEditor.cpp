@@ -1,9 +1,14 @@
 #include "InstaEditor.h"
-
+#include "Point.h"
 #include "Mouse.h"
 #include "TrackBar.h"
 #include "Editor.h"
 #include "ResizeCmd.h"
+#include <opencv2/core/core_c.h>
+#include <opencv2/core.hpp>
+#include <opencv2/core/types.hpp>
+#include <opencv2/imgproc.hpp>
+#include "ImageCropper.h"
 
 namespace 
 {
@@ -28,6 +33,8 @@ void InstaEditor::execute()
 	cv::imshow(window_name, original_image_);
 
 	const TrackBar track_bar(window_name, "scale", 100, 200);
+	Point center(image_->cols / 2, image_->rows / 2);
+	ImageCropper cropper(500, center);
 	int key = 0;
 	int old_scale = 100;
 	while (key != exit_key)
@@ -42,7 +49,10 @@ void InstaEditor::execute()
 			original_image_.copyTo(*image_);
 			std::unique_ptr<EditorCommand> cmd = std::make_unique<ResizeCmd>(image_, scale);
 			editor_.addAndExecuteCommand(std::move(cmd));
-		}		
+		}
+		center = { image_->cols / 2, image_->rows / 2 };
+		cropper.set_new_center(center);
+		*image_ = cropper.transform(*image_);
 		cv::imshow(window_name, *image_);
 	}
 }
