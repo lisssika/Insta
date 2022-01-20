@@ -3,21 +3,33 @@
 #include "exception"
 namespace 
 {
-	cv::Mat resize(const cv::Mat& image, const double x_scale, const double y_scale, int interpolation = cv::INTER_LINEAR)
+	void validation_size(int& pizel_count)
+	{
+		if (pizel_count<0)
+		{
+			throw std::runtime_error("pizel_count is invalid");
+		}
+		if (pizel_count == 0)
+		{
+			pizel_count = 1;
+		}
+	}
+
+	cv::Mat resize(const cv::Mat& image, const double x_scale, const double y_scale,
+	               int interpolation = cv::INTER_LINEAR)
 	{
 		if (double_is_lower(x_scale, 0.) || double_is_lower(y_scale, 0.))
 		{
-			throw std::runtime_error("scale isnot positive!");
+			throw std::runtime_error("scale is not positive!");
 		}
 		int new_cols = static_cast<int>(image.cols * x_scale);
 		int new_rows = static_cast<int>(image.rows * y_scale);
-		if (new_cols != 0 && new_rows != 0)
-		{
-			cv::Mat scaled_image;
-			cv::resize(image, scaled_image, { new_cols, new_rows }, 0, 0, interpolation);
-			return scaled_image;
-		}
-		return image;
+		validation_size(new_cols); // переменное число параметров хорошо бы
+		validation_size(new_rows);
+		assert(new_cols != 0 && new_rows != 0);
+		cv::Mat scaled_image;
+		cv::resize(image, scaled_image, {new_cols, new_rows}, 0, 0, interpolation);
+		return scaled_image;
 	}
 }
 

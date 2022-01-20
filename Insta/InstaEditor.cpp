@@ -3,7 +3,7 @@
 #include "Mouse.h"
 #include "TrackBar.h"
 #include "Editor.h"
-#include "ImageResize.h"
+#include "ResizeCmd.h"
 
 namespace 
 {
@@ -22,8 +22,11 @@ InstaEditor::InstaEditor(const cv::Mat& image):original_image_(image)
 
 void InstaEditor::execute()
 {
+	cv::namedWindow(window_name, cv::WINDOW_AUTOSIZE | cv::WINDOW_GUI_EXPANDED);
+	cv::namedWindow("settings", cv::WINDOW_AUTOSIZE | cv::WINDOW_GUI_EXPANDED);
 	std::shared_ptr<cv::Mat> image_ = std::make_shared<cv::Mat>(original_image_);
 	cv::imshow(window_name, original_image_);
+
 	const TrackBar track_bar(window_name, "scale", 100, 200);
 	int key = 0;
 	int old_scale = 100;
@@ -36,7 +39,8 @@ void InstaEditor::execute()
 		if (old_scale!=scale)
 		{
 			old_scale = scale;
-			std::unique_ptr<EditorCommand> cmd = std::make_unique<ImageResize>(image_, scale);
+			original_image_.copyTo(*image_);
+			std::unique_ptr<EditorCommand> cmd = std::make_unique<ResizeCmd>(image_, scale);
 			editor_.addAndExecuteCommand(std::move(cmd));
 		}		
 		cv::imshow(window_name, *image_);

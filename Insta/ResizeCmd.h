@@ -3,10 +3,10 @@
 #include "Resize.h"
 #include <opencv2/opencv.hpp>
 #include <memory>
-class ImageResize final : public EditorCommand
+class ResizeCmd final : public EditorCommand
 {
 public:
-	ImageResize(const std::shared_ptr<cv::Mat>& image, int scale);
+	ResizeCmd(const std::shared_ptr<cv::Mat>& image, int scale);
 	virtual void redo() override;
 	virtual void undo() override;
 private:
