@@ -12,7 +12,8 @@ struct Point {
 	std::string to_string() const;
 	int get_x() const;
 	int get_y() const;
-	bool operator==(Point const& p) const;
+	bool operator==(Point const& point) const;
+	bool operator!=(const Point& point) const;
 
 private:
 	int x_;

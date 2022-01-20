@@ -31,10 +31,11 @@ void InstaEditor::execute()
 	cv::namedWindow("settings", cv::WINDOW_AUTOSIZE | cv::WINDOW_GUI_EXPANDED);
 	std::shared_ptr<cv::Mat> image_ = std::make_shared<cv::Mat>(original_image_);
 	cv::imshow(window_name, original_image_);
+	Mouse mouse(window_name);
 
 	const TrackBar track_bar(window_name, "scale", 100, 200);
-	Point center(image_->cols / 2, image_->rows / 2);
-	ImageCropper cropper(500, center);
+	Point image_center(image_->cols / 2, image_->rows / 2);
+	ImageCropper cropper(500, image_center);
 	int key = 0;
 	int old_scale = 100;
 	while (key != exit_key)
@@ -50,8 +51,15 @@ void InstaEditor::execute()
 			std::unique_ptr<EditorCommand> cmd = std::make_unique<ResizeCmd>(image_, scale);
 			editor_.addAndExecuteCommand(std::move(cmd));
 		}
-		center = { image_->cols / 2, image_->rows / 2 };
-		cropper.set_new_center(center);
+		if (!mouse.is_mouse_pressed())
+		{
+			image_center = Point{ image_->cols / 2, image_->rows / 2 } + mouse.get_vector_offset_pressed();
+		}
+		else
+		{
+			image_center = Point{ image_->cols / 2, image_->rows / 2 };
+		}
+		cropper.set_new_center(image_center);
 		*image_ = cropper.transform(*image_);
 		cv::imshow(window_name, *image_);
 	}

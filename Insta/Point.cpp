@@ -4,6 +4,8 @@
 #include <string>
 #include "Point.h"
 
+// можно сделать шаблонным классом, если точка задана int, то это пиксели, а если float<1 то это относительный размер...
+
 Point::Point(int x, int y) :x_(x), y_(y) {}
 Point::Point() : x_{ 0 }, y_{ 0 }{}
 
@@ -38,15 +40,20 @@ int Point::get_y() const
 	return y_;
 }
 
-bool Point::operator==(Point const& p) const
+bool Point::operator==(Point const& point) const
 {
-	return x_==p.x_ && y_ == p.y_;
+	return x_==point.x_ && y_ == point.y_;
+}
+
+bool Point::operator!=(const Point& point) const
+{
+	return !operator==(point);
 }
 
 std::string Point::to_string(int number) const
 {
 	std::string number_str = std::to_string(number);
-	for (unsigned i = number_str.size(); i > 0; i--)
+	for (size_t i = number_str.size(); i > 0; i--)
 	{
 		if (number_str[i] == '0')
 		{
