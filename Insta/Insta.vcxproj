@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SqrCroppCmd.h" />
     <ClInclude Include="DoubleIsEqual.h" />
     <ClInclude Include="Editor.h" />
     <ClInclude Include="EditorCommand.h" />
@@ -32,6 +33,7 @@
     <ClInclude Include="TrackBar.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="SqrCroppCmd.cpp" />
     <ClCompile Include="DoubleIsEqual.cpp" />
     <ClCompile Include="Editor.cpp" />
     <ClCompile Include="EditorCommand.cpp" />

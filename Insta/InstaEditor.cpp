@@ -9,6 +9,7 @@
 #include <opencv2/core/types.hpp>
 #include <opencv2/imgproc.hpp>
 #include "ImageCropper.h"
+#include "SqrCroppCmd.h"
 
 namespace 
 {
@@ -40,16 +41,16 @@ void InstaEditor::execute()
 	int old_scale = 100;
 	while (key != exit_key)
 	{
-		
+		original_image_.copyTo(*image_);
 		const int scale = track_bar.get();
 
 		key = cv::waitKey(1); // некрасиво
 		if (old_scale!=scale)
 		{
 			old_scale = scale;
-			original_image_.copyTo(*image_);
+			
 			std::unique_ptr<EditorCommand> cmd = std::make_unique<ResizeCmd>(image_, scale);
-			editor_.addAndExecuteCommand(std::move(cmd));
+			editor_.add_command(std::move(cmd));
 		}
 		if (!mouse.is_mouse_pressed())
 		{
@@ -59,8 +60,9 @@ void InstaEditor::execute()
 		{
 			image_center = Point{ image_->cols / 2, image_->rows / 2 };
 		}
-		cropper.set_new_center(image_center);
-		*image_ = cropper.transform(*image_);
+		std::unique_ptr<EditorCommand> cropp_cmd = std::make_unique<SqrCroppCmd>(image_, image_center, 500);
+		editor_.add_command(std::move(cropp_cmd));
+		editor_.apply_condition();
 		cv::imshow(window_name, *image_);
 	}
 }

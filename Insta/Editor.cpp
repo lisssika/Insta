@@ -1,14 +1,39 @@
 #include "Editor.h"
+#include <algorithm>
+#include <set>
 
-void Editor::addAndExecuteCommand(std::unique_ptr<EditorCommand> cmd)
+void Editor::add_command(std::unique_ptr<EditorCommand> cmd)
 {
-	cmd->redo();
-	commands_.push_back(std::move(cmd));
+	if (!history_.empty())
+	{
+
+		for (auto& previous_cmd : history_)
+		{
+			if (*previous_cmd.first == *cmd)
+			{
+				previous_cmd.second = false;
+			}
+		}
+	}
+	history_.emplace_back(std::move(cmd), true); // emplace_back
 }
 
 void Editor::undo()
 {
-	if (commands_.empty()) return;
-	commands_.at(commands_.size() - 1)->undo();
-	commands_.pop_back();
+
+}
+
+void Editor::apply_condition()
+{
+	if (!history_.empty())
+	{
+
+		for (auto& cmd : history_)
+		{
+			if (cmd.second)
+			{
+				cmd.first->redo();
+			}
+		}
+	}
 }

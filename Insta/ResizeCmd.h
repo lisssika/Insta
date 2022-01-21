@@ -8,7 +8,6 @@ class ResizeCmd final : public EditorCommand
 public:
 	ResizeCmd(const std::shared_ptr<cv::Mat>& image, int scale);
 	virtual void redo() override;
-	virtual void undo() override;
 private:
 	int percent_scale_;
 	ProportionalResize scale_method_;

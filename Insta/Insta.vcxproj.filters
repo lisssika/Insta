@@ -4,9 +4,6 @@
     <Filter Include="Editor">
       <UniqueIdentifier>{bc328cdd-4323-4eee-bfe3-920fe925ff6a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EditorCommand">
-      <UniqueIdentifier>{c4d005b4-8a25-4962-ba35-bbfce7681f29}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Commands">
       <UniqueIdentifier>{2ecf2109-4f5a-4668-9141-061d6f8bb3fe}</UniqueIdentifier>
     </Filter>
@@ -34,13 +31,16 @@
     <Filter Include="Commands\ResizeCmd\ResizeMethods">
       <UniqueIdentifier>{dde59943-2e66-42e0-87e5-eb7a7860b110}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Commands\CroppCmd">
+      <UniqueIdentifier>{0e4263af-d4c2-457d-92f1-46c44f14f5fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Commands\EditorCommand">
+      <UniqueIdentifier>{c4d005b4-8a25-4962-ba35-bbfce7681f29}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Editor.h">
       <Filter>Editor</Filter>
-    </ClInclude>
-    <ClInclude Include="EditorCommand.h">
-      <Filter>EditorCommand</Filter>
     </ClInclude>
     <ClInclude Include="Point.h">
       <Filter>Point</Filter>
@@ -65,13 +65,16 @@
       <Filter>Commands\ResizeCmd</Filter>
     </ClInclude>
     <ClInclude Include="ImageCropper.h" />
+    <ClInclude Include="SqrCroppCmd.h">
+      <Filter>Commands\CroppCmd</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorCommand.h">
+      <Filter>Commands\EditorCommand</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Editor.cpp">
       <Filter>Editor</Filter>
-    </ClCompile>
-    <ClCompile Include="EditorCommand.cpp">
-      <Filter>EditorCommand</Filter>
     </ClCompile>
     <ClCompile Include="Point.cpp">
       <Filter>Point</Filter>
@@ -97,5 +100,11 @@
       <Filter>Commands\ResizeCmd</Filter>
     </ClCompile>
     <ClCompile Include="ImageCropper.cpp" />
+    <ClCompile Include="SqrCroppCmd.cpp">
+      <Filter>Commands\CroppCmd</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorCommand.cpp">
+      <Filter>Commands\EditorCommand</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

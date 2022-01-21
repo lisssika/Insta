@@ -8,8 +8,3 @@ void ResizeCmd::redo()
 {
 	*image_ = scale_method_.zoom(*image_, percent_scale_/ 100.);
 }
-
-void ResizeCmd::undo()
-{
-	*image_ = scale_method_.zoom(*image_, 100. / static_cast<double>(percent_scale_)); // но ведь так потеряется качество
-}
