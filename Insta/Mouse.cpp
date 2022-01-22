@@ -4,33 +4,37 @@
 
 void new_mouse_coordinates(int mouse_event, int mouseX, int mouseY, int, void* mouse)
 {
+	const auto mouse_x = static_cast<int>(mouseX);
+	const auto mouse_y = static_cast<int>(mouseY);
 	Mouse mouse_ = *static_cast<Mouse*>(mouse);
 	switch (mouse_event)
 	{
+	case cv::EVENT_MOUSEMOVE:
+		static_cast<Mouse*>(mouse)->set_move_coordinate(Point{ mouse_x, mouse_y });
+		break;
 	case cv::EVENT_LBUTTONDOWN:
 		static_cast<Mouse*>(mouse)->set_mouse_down();
-		static_cast<Mouse*>(mouse)->set_lbutton_down_coordinate(Point{ mouseX, mouseY });
+		static_cast<Mouse*>(mouse)->set_lbutton_down_coordinate(Point{ mouse_x, mouse_y });
 		break;
 	case cv::EVENT_LBUTTONUP:
 		static_cast<Mouse*>(mouse)->set_mouse_up();
-		static_cast<Mouse*>(mouse)->set_lbutton_up_coordinate(Point{ mouseX, mouseY });
+		static_cast<Mouse*>(mouse)->set_lbutton_up_coordinate(Point{ mouse_x, mouse_y });
 		break;
 	default:
 		break;
 	}
 }
 
-Mouse::Mouse(const std::string& window_name_)
+Mouse::Mouse(const std::string& window_name)
 {
-	cv::setMouseCallback(window_name_, new_mouse_coordinates, this);
+	cv::setMouseCallback(window_name, new_mouse_coordinates, this);
 }
 
-void Mouse::operator()(int x, int y, bool flg)
+void Mouse::set_move_coordinate(const Point& coord)
 {
-	x_ = x;
-	y_ = y;
-	was_moved = flg;
+	move_coordinate_ = coord;
 }
+
 
 void Mouse::set_lbutton_down_coordinate(const Point& coord)
 {
@@ -42,25 +46,6 @@ void Mouse::set_lbutton_up_coordinate(const Point& coord)
 	lbutton_up_coordinate_ = coord;
 }
 
-int Mouse::get_x() const
-{
-	return x_;
-}
-
-int Mouse::get_y() const
-{
-	return y_;
-}
-
-bool Mouse::moved() const
-{
-	return was_moved;
-}
-
-void Mouse::reset_moved()
-{
-	was_moved = false;
-}
 
 void Mouse::set_mouse_down()
 {
@@ -83,5 +68,9 @@ Point Mouse::get_vector_offset_pressed() const
 	//{
 		//int a = 1;
 	//}
-	return lbutton_up_coordinate_ - lbutton_down_coordinate_;
+	if (pressed)
+	{
+		return move_coordinate_ - lbutton_down_coordinate_;
+	}
+	return Point{ 0, 0 };
 }

@@ -6,12 +6,12 @@ void Editor::add_command(std::unique_ptr<EditorCommand> cmd)
 {
 	if (!history_.empty())
 	{
-
-		for (auto& previous_cmd : history_)
+		for (size_t i = history_.size(); i > 0; i-- )
 		{
-			if (*previous_cmd.first == *cmd)
+			if (*history_[i-1].first == *cmd)
 			{
-				previous_cmd.second = false;
+				history_[i-1].second = false;
+				break;
 			}
 		}
 	}
@@ -20,7 +20,21 @@ void Editor::add_command(std::unique_ptr<EditorCommand> cmd)
 
 void Editor::undo()
 {
+	auto cmd = std::move(history_.back().first); // danger
+	history_.pop_back();
 
+	if (!history_.empty())
+	{
+		for (size_t i = history_.size() - 1; i >= 0; i--)
+		{
+			if (*history_[i].first == *cmd)
+			{
+				history_[i].first->redo();
+				history_[i].second = true;
+				return;
+			}
+		}
+	}
 }
 
 void Editor::apply_condition()

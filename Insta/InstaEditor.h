@@ -9,7 +9,7 @@ public:
 	void execute();
 private:
 	Editor editor_;
-	
+	std::shared_ptr<cv::Mat> image_;
 	cv::Mat original_image_;
 };
 

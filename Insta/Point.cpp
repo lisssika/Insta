@@ -53,7 +53,7 @@ bool Point::operator!=(const Point& point) const
 std::string Point::to_string(int number) const
 {
 	std::string number_str = std::to_string(number);
-	for (size_t i = number_str.size(); i > 0; i--)
+	for (int i = number_str.size(); i > 0; i--)
 	{
 		if (number_str[i] == '0')
 		{
