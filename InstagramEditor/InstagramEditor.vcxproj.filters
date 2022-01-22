@@ -2,9 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="InstagramEditor.cpp">
-      <Filter>InstagramEditor</Filter>
-    </ClCompile>
     <ClCompile Include="Mouse.cpp">
       <Filter>Mouse</Filter>
     </ClCompile>
@@ -23,9 +20,6 @@
     <ClCompile Include="EditorCommand.cpp">
       <Filter>EditorCommand</Filter>
     </ClCompile>
-    <ClCompile Include="SqrCroppCmd.cpp">
-      <Filter>Window\SqrCroppCmd</Filter>
-    </ClCompile>
     <ClCompile Include="DoubleСomparison.cpp">
       <Filter>DoubleComparison</Filter>
     </ClCompile>
@@ -37,6 +31,12 @@
     </ClCompile>
     <ClCompile Include="ImageCropper.cpp">
       <Filter>ImageTransformer\Cropper</Filter>
+    </ClCompile>
+    <ClCompile Include="InstaView.cpp">
+      <Filter>Window\ImageShowStrategy</Filter>
+    </ClCompile>
+    <ClCompile Include="InstagramEditor.cpp">
+      <Filter>InstagramEditor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,17 +73,14 @@
     <Filter Include="ImageTransformer\Cropper">
       <UniqueIdentifier>{e891df64-467f-41dc-94b5-82ca5e7f9b90}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Window\SqrCroppCmd">
-      <UniqueIdentifier>{bd86b38a-8a33-491e-9dc6-bef384b7a7a5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="EditorCommand\CropCmd">
       <UniqueIdentifier>{8548c8fc-49af-4e37-b0e3-ee50c72feaf4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Window\ImageShowStrategy">
+      <UniqueIdentifier>{bd86b38a-8a33-491e-9dc6-bef384b7a7a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="InstagramEditor.h">
-      <Filter>InstagramEditor</Filter>
-    </ClInclude>
     <ClInclude Include="Mouse.h">
       <Filter>Mouse</Filter>
     </ClInclude>
@@ -102,9 +99,6 @@
     <ClInclude Include="EditorCommand.h">
       <Filter>EditorCommand</Filter>
     </ClInclude>
-    <ClInclude Include="SqrCroppCmd.h">
-      <Filter>Window\SqrCroppCmd</Filter>
-    </ClInclude>
     <ClInclude Include="ImageTransformer.h">
       <Filter>ImageTransformer</Filter>
     </ClInclude>
@@ -119,6 +113,15 @@
     </ClInclude>
     <ClInclude Include="ImageCropper.h">
       <Filter>ImageTransformer\Cropper</Filter>
+    </ClInclude>
+    <ClInclude Include="InstaView.h">
+      <Filter>Window\ImageShowStrategy</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageShowStrategy.h">
+      <Filter>Window\ImageShowStrategy</Filter>
+    </ClInclude>
+    <ClInclude Include="InstagramEditor.h">
+      <Filter>InstagramEditor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

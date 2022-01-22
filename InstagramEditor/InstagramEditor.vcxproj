@@ -28,7 +28,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Point.cpp" />
-    <ClCompile Include="SqrCroppCmd.cpp" />
+    <ClCompile Include="InstaView.cpp" />
     <ClCompile Include="ImageCropper.cpp" />
     <ClCompile Include="TrackBar.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -39,11 +39,12 @@
     <ClInclude Include="Editor.h" />
     <ClInclude Include="EditorCommand.h" />
     <ClInclude Include="ImageResizer.h" />
+    <ClInclude Include="ImageShowStrategy.h" />
     <ClInclude Include="ImageTransformer.h" />
     <ClInclude Include="InstagramEditor.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Point.h" />
-    <ClInclude Include="SqrCroppCmd.h" />
+    <ClInclude Include="InstaView.h" />
     <ClInclude Include="ImageCropper.h" />
     <ClInclude Include="TrackBar.h" />
     <ClInclude Include="Window.h" />

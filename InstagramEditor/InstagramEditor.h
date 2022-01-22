@@ -1,12 +1,15 @@
 #pragma once
+#include "Window.h"
+#include "Editor.h"
 #include <memory>
-#include <opencv2/core/mat.hpp>
 class InstagramEditor
 {
 public:
-	InstagramEditor(const std::unique_ptr<cv::Mat>& image );
+	InstagramEditor(const cv::Mat& image);
+	void execute();
 private:
-	cv::Mat image_;
-
+	Editor editor_;
+	cv::Mat original_image_;
+	std::shared_ptr<cv::Mat> image_;
 };
 

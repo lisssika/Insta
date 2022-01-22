@@ -10,8 +10,3 @@ public:
 	virtual ~ImageShowStrategy() = default;
 };
 
-class InstagramShow final : public ImageShowStrategy
-{
-public:
-	cv::Mat show(const cv::Mat& image, const std::string& window_name) override;
-};

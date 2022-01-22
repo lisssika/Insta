@@ -15,6 +15,7 @@ void new_mouse_coordinates(int mouse_event, int mouseX, int mouseY, int, void* m
 	case cv::EVENT_LBUTTONDOWN:
 		static_cast<Mouse*>(mouse)->set_mouse_down();
 		static_cast<Mouse*>(mouse)->set_lbutton_down_coordinate(Point{ mouse_x, mouse_y });
+		static_cast<Mouse*>(mouse)->set_old_pressed_point(Point{ mouse_x, mouse_y });
 		break;
 	case cv::EVENT_LBUTTONUP:
 		static_cast<Mouse*>(mouse)->set_mouse_up();
@@ -46,6 +47,10 @@ void Mouse::set_lbutton_up_coordinate(const Point& coord)
 	lbutton_up_coordinate_ = coord;
 }
 
+void Mouse::set_old_pressed_point(const Point& coord)
+{
+	old_pressed_point_ = coord;
+}
 
 void Mouse::set_mouse_down()
 {
