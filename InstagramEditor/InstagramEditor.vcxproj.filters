@@ -24,13 +24,19 @@
       <Filter>EditorCommand</Filter>
     </ClCompile>
     <ClCompile Include="SqrCroppCmd.cpp">
-      <Filter>EditorCommand\SqrCroppCmd</Filter>
+      <Filter>Window\SqrCroppCmd</Filter>
     </ClCompile>
     <ClCompile Include="DoubleСomparison.cpp">
       <Filter>DoubleComparison</Filter>
     </ClCompile>
     <ClCompile Include="ImageResizer.cpp">
-      <Filter>ImageTransformer</Filter>
+      <Filter>ImageTransformer\Resizer</Filter>
+    </ClCompile>
+    <ClCompile Include="CropCmd.cpp">
+      <Filter>EditorCommand\CropCmd</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageCropper.cpp">
+      <Filter>ImageTransformer\Cropper</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -55,14 +61,23 @@
     <Filter Include="EditorCommand">
       <UniqueIdentifier>{58524340-dfd3-439f-8b40-984142ea7250}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EditorCommand\SqrCroppCmd">
-      <UniqueIdentifier>{bd86b38a-8a33-491e-9dc6-bef384b7a7a5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ImageTransformer">
       <UniqueIdentifier>{3c246c99-9be4-48bb-8a43-c58c39c60487}</UniqueIdentifier>
     </Filter>
     <Filter Include="DoubleComparison">
       <UniqueIdentifier>{33eeb9f1-5436-490c-808c-f3a522faee4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImageTransformer\Resizer">
+      <UniqueIdentifier>{5248fd1c-da53-4aac-91c6-9ca182730432}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImageTransformer\Cropper">
+      <UniqueIdentifier>{e891df64-467f-41dc-94b5-82ca5e7f9b90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window\SqrCroppCmd">
+      <UniqueIdentifier>{bd86b38a-8a33-491e-9dc6-bef384b7a7a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCommand\CropCmd">
+      <UniqueIdentifier>{8548c8fc-49af-4e37-b0e3-ee50c72feaf4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -88,7 +103,7 @@
       <Filter>EditorCommand</Filter>
     </ClInclude>
     <ClInclude Include="SqrCroppCmd.h">
-      <Filter>EditorCommand\SqrCroppCmd</Filter>
+      <Filter>Window\SqrCroppCmd</Filter>
     </ClInclude>
     <ClInclude Include="ImageTransformer.h">
       <Filter>ImageTransformer</Filter>
@@ -97,7 +112,13 @@
       <Filter>DoubleComparison</Filter>
     </ClInclude>
     <ClInclude Include="ImageResizer.h">
-      <Filter>ImageTransformer</Filter>
+      <Filter>ImageTransformer\Resizer</Filter>
+    </ClInclude>
+    <ClInclude Include="CropCmd.h">
+      <Filter>EditorCommand\CropCmd</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageCropper.h">
+      <Filter>ImageTransformer\Cropper</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

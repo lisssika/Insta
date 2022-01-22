@@ -32,7 +32,7 @@ Mouse::Mouse(const std::string& window_name)
 
 void Mouse::set_move_coordinate(const Point& coord)
 {
-	move_coordinate_ = coord;
+	modern_coordinate_ = coord;
 }
 
 
@@ -70,7 +70,7 @@ Point Mouse::get_vector_offset_pressed() const
 	//}
 	if (pressed)
 	{
-		return move_coordinate_ - lbutton_down_coordinate_;
+		return modern_coordinate_ - lbutton_down_coordinate_;
 	}
 	return Point{ 0, 0 };
 }

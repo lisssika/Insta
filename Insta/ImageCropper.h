@@ -6,7 +6,7 @@ class ImageCropper final : public ImageTransformer
 {
 public:
 	ImageCropper(int size, const Point& center);
-	cv::Mat transform(const cv::Mat& image) override;
+	cv::Mat transform(const cv::Mat& original_image) override;
 	void set_params(int size, Point center);
 	void set_size(int size);
 	void set_new_center(Point new_center);

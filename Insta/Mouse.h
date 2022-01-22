@@ -7,7 +7,7 @@ class Mouse final
 private:
 	Point lbutton_down_coordinate_;
 	Point lbutton_up_coordinate_;
-	Point move_coordinate_;
+	Point modern_coordinate_;
 	bool pressed = false;
 public:
 	Mouse(const std::string& window_name);

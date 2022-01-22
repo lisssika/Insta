@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CropCmd.cpp" />
     <ClCompile Include="DoubleСomparison.cpp" />
     <ClCompile Include="Editor.cpp" />
     <ClCompile Include="EditorCommand.cpp" />
@@ -28,10 +29,12 @@
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Point.cpp" />
     <ClCompile Include="SqrCroppCmd.cpp" />
+    <ClCompile Include="ImageCropper.cpp" />
     <ClCompile Include="TrackBar.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CropCmd.h" />
     <ClInclude Include="DoubleСomparison.h" />
     <ClInclude Include="Editor.h" />
     <ClInclude Include="EditorCommand.h" />
@@ -41,6 +44,7 @@
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="SqrCroppCmd.h" />
+    <ClInclude Include="ImageCropper.h" />
     <ClInclude Include="TrackBar.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>

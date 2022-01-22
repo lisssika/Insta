@@ -47,25 +47,23 @@ namespace
 
 }
 
-void ImageProportionalResizer::set_parameters(double scale)
+void ImageProportionalResizer::set_parameters(double scale, const cv::Mat& image)
 {
 	if (double_is_lower(scale, 0.)||double_is_equal(scale, 0.))
 	{
 		throw std::runtime_error("scale is not positive!");
 	}
 	scale_ = scale;
+	image.copyTo(original_image_);
 }
 
-cv::Mat ImageProportionalResizer::transform(const cv::Mat& original_image)
+cv::Mat ImageProportionalResizer::transform()
 {
 	if (scale_ > 1.)
 	{
-		return zoom_in(original_image, scale_, scale_);
+		return zoom_in(original_image_, scale_, scale_);
 	}
-	else
-	{
-		return zoom_out(original_image, scale_, scale_);
-	}
+	return zoom_out(original_image_, scale_, scale_);
 }
 
 

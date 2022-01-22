@@ -1,6 +1,7 @@
 #pragma once
 #include <memory>
-#include <opencv2/imgcodecs.hpp>
+#include <opencv2/core/mat.hpp>
+
 class EditorCommand
 {
 public:

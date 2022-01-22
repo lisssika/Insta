@@ -4,7 +4,7 @@
 class ImageTransformer
 {
 public:
-	virtual cv::Mat transform(const cv::Mat& image) = 0;
+	virtual cv::Mat transform(const cv::Mat& original_image) = 0;
 
 };
 

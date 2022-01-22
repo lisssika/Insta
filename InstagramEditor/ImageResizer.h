@@ -5,8 +5,8 @@
 class ImageProportionalResizer final :public  ImageTransformer
 {
 public:
-	void set_parameters(double scale);
-	cv::Mat transform(const cv::Mat& original_image) override;
+	void set_parameters(double scale, const cv::Mat& image);
+	cv::Mat transform() override;
 private:
 	double scale_{};
 };

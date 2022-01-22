@@ -1,6 +1,6 @@
 #pragma once
-#include <opencv2/imgcodecs.hpp>
 #include <memory>
+#include <opencv2/core/mat.hpp>
 class InstagramEditor
 {
 public:

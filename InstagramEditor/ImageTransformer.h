@@ -4,6 +4,8 @@
 class ImageTransformer
 {
 public:
-	virtual cv::Mat transform(const cv::Mat&) = 0;
+	virtual cv::Mat transform() = 0;
 	virtual ~ImageTransformer() = default;
+protected:
+	cv::Mat original_image_;
 };

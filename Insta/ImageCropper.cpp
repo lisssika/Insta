@@ -15,13 +15,13 @@ namespace
 
 ImageCropper::ImageCropper(int size, const Point& center):size_(size), center_(center){}
 
-cv::Mat ImageCropper::transform(const cv::Mat& image)
+cv::Mat ImageCropper::transform(const cv::Mat& original_image)
 {
 	const int center_x = center_.get_x();
 	const int center_y = center_.get_y();
 	const int half_size = size_/2;
-	const bool center_x_ok = check_coord(center_x, half_size, image.cols);
-	const bool center_y_ok = check_coord(center_y, half_size, image.rows);
+	const bool center_x_ok = check_coord(center_x, half_size, original_image.cols);
+	const bool center_y_ok = check_coord(center_y, half_size, original_image.rows);
 	if (!center_x_ok || !center_y_ok)
 	{
 		throw std::runtime_error("cropped area is over the image");
@@ -29,7 +29,7 @@ cv::Mat ImageCropper::transform(const cv::Mat& image)
 	const int x = center_x - half_size;
 	const int y = center_y - half_size;
 	const cv::Rect roi_rect(static_cast<int> (x), static_cast<int>(y), static_cast<int>(size_), static_cast<int>(size_));
-	return image(roi_rect);
+	return original_image(roi_rect);
 }
 
 void ImageCropper::set_params(int size, Point center)
