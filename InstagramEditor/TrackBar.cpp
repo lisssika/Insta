@@ -7,8 +7,7 @@
 TrackBar::TrackBar(std::string const& window_name, std::string const& name, int start_pos, int max_pos)
 {
 	position = std::make_unique<int>(start_pos);
-	//cv::createTrackbar("track2", NULL, position.get(), 255, NULL);
-	cv::createTrackbar(name, "settings", position.get(), max_pos, nullptr);
+	cv::createTrackbar(name, window_name, position.get(), max_pos, nullptr);
 }
 
 int TrackBar::get() const

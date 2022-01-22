@@ -35,6 +35,10 @@ void SqrImageCropper::set_parameters(int size, const Point& left_up_point, const
 	{
 		throw std::runtime_error("cropped area is over the image");
 	}
+	if (size <= 0)
+	{
+		throw std::runtime_error("size must be positive number");
+	}
 	size_ = size;
 	left_up_point_ = left_up_point;
 	image.copyTo(original_image_);

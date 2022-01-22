@@ -9,5 +9,6 @@ Window::Window(const std::string& name, int width, int height):name_(name)
 
 void Window::show(const cv::Mat& image) const
 {
+	cv::namedWindow(name_, cv::WINDOW_NORMAL | cv::WINDOW_KEEPRATIO | cv::WINDOW_GUI_EXPANDED);
 	cv::imshow(name_, image);
 }
