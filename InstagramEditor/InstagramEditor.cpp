@@ -7,19 +7,25 @@
 #include "CropCmd.h"
 #include "Point.h"
 #include "TrackBar.h"
+#include "ImageFilter.h"
 namespace 
 {
 	const std::string window_name{"Instagram Editor"};
 	const int window_size = 500;
 	int exit_key = 27;
 	bool check_exit() {
-		return cv::waitKey(1) == exit_key;
+		return false; // cv::waitKey(1) == exit_key;
 	}
 	const int& min(const int& a, const int& b) {
 		if (a < b)
 			return a;
 		return b;
 	}
+	enum Buttons
+	{
+		next = 27, //39,
+		previous = 37
+	};
 }
 
 InstagramEditor::InstagramEditor(const cv::Mat& image)
@@ -30,9 +36,12 @@ InstagramEditor::InstagramEditor(const cv::Mat& image)
 
 void InstagramEditor::execute()
 {
+	
+
 	Window window_{ window_name, window_size, window_size };
 	Mouse mouse(window_name);
-	TrackBar zoom(window_name, "zoom", 100, 200);
+	TrackBar zoom(window_name, "zoom", 100, 100);
+	
 
 	bool exit = false;
 	auto image = std::make_shared<cv::Mat>();
@@ -42,7 +51,9 @@ void InstagramEditor::execute()
 	Point center_of_crop = Point{ width / 2, height / 2 };
 	const int orig_size = min(width, height);
 	int size = orig_size;
-	
+
+	ImageFilter filter;//убрать в команду
+	filter.set_next(50);
 
 	while (!check_exit())
 	{
@@ -56,14 +67,28 @@ void InstagramEditor::execute()
 			center_of_crop = new_center;
 			size = new_size;
 			editor_.execute(cmd);
-			window_.show(*image);
-
 		}
 		catch (std::exception&)
 		{
 			std::unique_ptr<EditorCommand> cmd = std::make_unique<CropCmd>(image, center_of_crop, size);
 			editor_.execute(cmd);
-			window_.show(*image);
 		}
+		{
+			int button = cv::waitKey(1);
+			switch (button)
+			{
+				case Buttons::previous:
+					filter.set_previous( 50);
+					break;
+				case Buttons::next:
+					filter.set_next( 50);
+					break;
+				default:
+					break;
+			}
+			filter.set_image(*image);
+			*image = filter.transform();
+		}
+		window_.show(*image);
 	}
 }

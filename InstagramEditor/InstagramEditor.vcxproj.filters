@@ -38,6 +38,12 @@
     <ClCompile Include="InstagramEditor.cpp">
       <Filter>InstagramEditor</Filter>
     </ClCompile>
+    <ClCompile Include="ImageFilter.cpp">
+      <Filter>ImageTransformer\Filter</Filter>
+    </ClCompile>
+    <ClCompile Include="FilteringStrategy.cpp">
+      <Filter>ImageTransformer\Filter\Strategy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="InstagramEditor">
@@ -78,6 +84,12 @@
     </Filter>
     <Filter Include="Window\ImageShowStrategy">
       <UniqueIdentifier>{bd86b38a-8a33-491e-9dc6-bef384b7a7a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImageTransformer\Filter">
+      <UniqueIdentifier>{3dbb184b-ff9c-4316-84c7-3f6e5c28b964}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImageTransformer\Filter\Strategy">
+      <UniqueIdentifier>{960c90c1-9350-4aee-b39e-b99d1dffef1a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +134,12 @@
     </ClInclude>
     <ClInclude Include="InstagramEditor.h">
       <Filter>InstagramEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageFilter.h">
+      <Filter>ImageTransformer\Filter</Filter>
+    </ClInclude>
+    <ClInclude Include="FilteringStrategy.h">
+      <Filter>ImageTransformer\Filter\Strategy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

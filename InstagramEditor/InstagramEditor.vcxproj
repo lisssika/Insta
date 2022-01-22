@@ -23,6 +23,8 @@
     <ClCompile Include="DoubleСomparison.cpp" />
     <ClCompile Include="Editor.cpp" />
     <ClCompile Include="EditorCommand.cpp" />
+    <ClCompile Include="FilteringStrategy.cpp" />
+    <ClCompile Include="ImageFilter.cpp" />
     <ClCompile Include="ImageResizer.cpp" />
     <ClCompile Include="InstagramEditor.cpp" />
     <ClCompile Include="main.cpp" />
@@ -38,6 +40,8 @@
     <ClInclude Include="DoubleСomparison.h" />
     <ClInclude Include="Editor.h" />
     <ClInclude Include="EditorCommand.h" />
+    <ClInclude Include="FilteringStrategy.h" />
+    <ClInclude Include="ImageFilter.h" />
     <ClInclude Include="ImageResizer.h" />
     <ClInclude Include="ImageShowStrategy.h" />
     <ClInclude Include="ImageTransformer.h" />
