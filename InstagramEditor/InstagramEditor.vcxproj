@@ -19,41 +19,37 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SqrCroppCmd.h" />
-    <ClInclude Include="DoubleIsEqual.h" />
-    <ClInclude Include="Editor.h" />
-    <ClInclude Include="EditorCommand.h" />
-    <ClInclude Include="ImageCropper.h" />
-    <ClInclude Include="ResizeCmd.h" />
-    <ClInclude Include="ImageTransformer.h" />
-    <ClInclude Include="InstaEditor.h" />
-    <ClInclude Include="Mouse.h" />
-    <ClInclude Include="Point.h" />
-    <ClInclude Include="Resize.h" />
-    <ClInclude Include="TrackBar.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="SqrCroppCmd.cpp" />
-    <ClCompile Include="DoubleIsEqual.cpp" />
+    <ClCompile Include="DoubleСomparison.cpp" />
     <ClCompile Include="Editor.cpp" />
     <ClCompile Include="EditorCommand.cpp" />
-    <ClCompile Include="ImageCropper.cpp" />
-    <ClCompile Include="ResizeCmd.cpp" />
-    <ClCompile Include="ImageTransformer.cpp" />
-    <ClCompile Include="InstaEditor.cpp" />
+    <ClCompile Include="ImageResizer.cpp" />
+    <ClCompile Include="InstagramEditor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="Point.cpp" />
-    <ClCompile Include="Resize.cpp" />
+    <ClCompile Include="SqrCroppCmd.cpp" />
     <ClCompile Include="TrackBar.cpp" />
+    <ClCompile Include="Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DoubleСomparison.h" />
+    <ClInclude Include="Editor.h" />
+    <ClInclude Include="EditorCommand.h" />
+    <ClInclude Include="ImageResizer.h" />
+    <ClInclude Include="ImageTransformer.h" />
+    <ClInclude Include="InstagramEditor.h" />
+    <ClInclude Include="Mouse.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="SqrCroppCmd.h" />
+    <ClInclude Include="TrackBar.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d3a56e69-0262-4450-a998-09b02bcfb9b7}</ProjectGuid>
-    <RootNamespace>Insta</RootNamespace>
+    <ProjectGuid>{b1557038-38b4-4f9c-8af7-653983626618}</ProjectGuid>
+    <RootNamespace>InstagramEditor</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>InstaOldVersion</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="InstagramEditor.cpp">
+      <Filter>InstagramEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="TrackBar.cpp">
+      <Filter>Trackbar</Filter>
+    </ClCompile>
+    <ClCompile Include="Point.cpp">
+      <Filter>Point</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorCommand.cpp">
+      <Filter>EditorCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="SqrCroppCmd.cpp">
+      <Filter>EditorCommand\SqrCroppCmd</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleСomparison.cpp">
+      <Filter>DoubleComparison</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageResizer.cpp">
+      <Filter>ImageTransformer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="InstagramEditor">
+      <UniqueIdentifier>{1cac7cf5-80be-483a-85f5-61edaf6f21f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mouse">
+      <UniqueIdentifier>{2e9d5749-02e5-4fe3-bab1-ef349b7ee2d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Trackbar">
+      <UniqueIdentifier>{d9da41e6-d355-4686-bab4-611cc3c9763c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window">
+      <UniqueIdentifier>{bf5c072c-0b67-4a6c-aa8c-64f6e43ca763}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Point">
+      <UniqueIdentifier>{4f368d95-6c5b-48a8-9492-d79de0980efd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor">
+      <UniqueIdentifier>{7954e8ba-67d9-4136-bc1d-141aecf309af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCommand">
+      <UniqueIdentifier>{58524340-dfd3-439f-8b40-984142ea7250}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorCommand\SqrCroppCmd">
+      <UniqueIdentifier>{bd86b38a-8a33-491e-9dc6-bef384b7a7a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImageTransformer">
+      <UniqueIdentifier>{3c246c99-9be4-48bb-8a43-c58c39c60487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DoubleComparison">
+      <UniqueIdentifier>{33eeb9f1-5436-490c-808c-f3a522faee4b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="InstagramEditor.h">
+      <Filter>InstagramEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="TrackBar.h">
+      <Filter>Trackbar</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Point</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorCommand.h">
+      <Filter>EditorCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="SqrCroppCmd.h">
+      <Filter>EditorCommand\SqrCroppCmd</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageTransformer.h">
+      <Filter>ImageTransformer</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleСomparison.h">
+      <Filter>DoubleComparison</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageResizer.h">
+      <Filter>ImageTransformer</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
