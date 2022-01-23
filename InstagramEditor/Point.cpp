@@ -15,6 +15,16 @@ Point Point::operator+(Point const& p) const {
 Point Point::operator-(Point const& p) const {
 	return{ x_ - p.x_, y_ - p.y_ };
 }
+
+Point Point::operator+=(Point const& p) {
+	*this = *this + p;
+	return *this;
+}
+Point Point::operator-=(Point const& p) {
+	*this = *this - p;
+	return *this;
+}
+
 Point Point::operator*(int a) const {
 	return { x_ * a, y_ * a };
 }

@@ -26,6 +26,30 @@ namespace
 		next = 27, //39,
 		previous = 37
 	};
+	void valid_center(Point& center,  int size, int cols, int rows)
+	{
+		if (size>min(cols, rows))
+		{
+			throw std::runtime_error("The area is larger the image. \n");
+		}
+		const int half_size = size / 2;
+		if (center.get_x()< half_size)
+		{
+			center += Point{ half_size - center.get_x(), 0 };
+		}
+		if (center.get_x() + half_size > cols)
+		{
+			center -= Point{ center.get_x() + half_size - cols, 0 };
+		}
+		if (center.get_y() < half_size)
+		{
+			center += Point{ 0, half_size - center.get_y() };
+		}
+		if (center.get_y() + half_size > rows)
+		{
+			center -= Point{0, center.get_y() + half_size - rows };
+		}
+	}
 }
 
 InstagramEditor::InstagramEditor(const cv::Mat& image)
@@ -63,6 +87,7 @@ void InstagramEditor::execute()
 			Point offset = mouse.get_vector_offset_pressed();
 			Point new_center = center_of_crop - offset;
 			int new_size = zoom.get() * orig_size/100;
+			valid_center(new_center, new_size, image->cols, image->rows);
 			std::unique_ptr<EditorCommand> cmd = std::make_unique<CropCmd>(image, new_center, new_size);
 			center_of_crop = new_center;
 			size = new_size;

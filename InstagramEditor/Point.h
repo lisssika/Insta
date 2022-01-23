@@ -7,6 +7,8 @@ struct Point {
 	Point();
 	Point operator+(Point const& p) const;
 	Point operator-(Point const& p) const;
+	Point operator+=(Point const& p);
+	Point operator-=(Point const& p);
 	Point operator*(int a) const;
 	void scale(int sx, int sy);
 	std::string to_string() const;
