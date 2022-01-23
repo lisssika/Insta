@@ -14,7 +14,7 @@ namespace
 	const int window_size = 500;
 	int exit_key = 27;
 	bool check_exit() {
-		return false; // cv::waitKey(1) == exit_key;
+		return cv::waitKey(1) == exit_key;
 	}
 	const int& min(const int& a, const int& b) {
 		if (a < b)
@@ -23,10 +23,10 @@ namespace
 	}
 	enum Buttons
 	{
-		next = 27, //39,
-		previous = 37
+		next = 49,
+		previous = 50 
 	};
-	void valid_center(Point& center,  int size, int cols, int rows)
+	void validate_center(Point& center,  int size, int cols, int rows)
 	{
 		if (size>min(cols, rows))
 		{
@@ -60,11 +60,10 @@ InstagramEditor::InstagramEditor(const cv::Mat& image)
 
 void InstagramEditor::execute()
 {
-	
-
 	Window window_{ window_name, window_size, window_size };
 	Mouse mouse(window_name);
 	TrackBar zoom(window_name, "zoom", 100, 100);
+	TrackBar filter_intensity(window_name, "intensity", 50, 100);
 	
 
 	bool exit = false;
@@ -87,26 +86,28 @@ void InstagramEditor::execute()
 			Point offset = mouse.get_vector_offset_pressed();
 			Point new_center = center_of_crop - offset;
 			int new_size = zoom.get() * orig_size/100;
-			valid_center(new_center, new_size, image->cols, image->rows);
+			validate_center(new_center, new_size, image->cols, image->rows);
 			std::unique_ptr<EditorCommand> cmd = std::make_unique<CropCmd>(image, new_center, new_size);
 			center_of_crop = new_center;
 			size = new_size;
 			editor_.execute(cmd);
 		}
-		catch (std::exception&)
+		catch (std::runtime_error&)
 		{
 			std::unique_ptr<EditorCommand> cmd = std::make_unique<CropCmd>(image, center_of_crop, size);
 			editor_.execute(cmd);
 		}
+
 		{
+			int intensity = filter_intensity.get();
 			int button = cv::waitKey(1);
 			switch (button)
 			{
 				case Buttons::previous:
-					filter.set_previous( 50);
+					filter.set_previous(intensity);
 					break;
 				case Buttons::next:
-					filter.set_next( 50);
+					filter.set_next(intensity);
 					break;
 				default:
 					break;
